@@ -3,7 +3,9 @@ const employeeDetailsModel = require('./employeeDetailsModel');
 require('dotenv').config();
 
 // Create a Sequelize instance with MySQL as the dialect
-const sequelize = new Sequelize('my_attendance_db', 'root', '', {
+const sequelize = new Sequelize(process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PW, {
   host: 'localhost',
   dialect: process.env.DB_DIALECT_POSTGRES
 });
