@@ -4,8 +4,8 @@ require('dotenv').config();
 
 // Create a Sequelize instance with MySQL as the dialect
 const sequelize = new Sequelize('my_attendance_db', 'root', '', {
-  host: '127.0.0.1',
-  dialect: process.env.DB_DIALECT_MYSQL
+  host: 'localhost',
+  dialect: process.env.DB_DIALECT_POSTGRES
 });
 
 try {
