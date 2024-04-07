@@ -1,18 +1,23 @@
+require('dotenv').config();
 const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors"); // Add this line
+const cors = require("cors");
+
+const PORT = process.env.PORT || 3001;
 
 const app = express();
-require("./models")
+require("./models");
+
+// Use express.json() and express.urlencoded() instead of bodyParser
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 
 // Use CORS middleware
 app.use(cors());
 
 // Route
-app.use('/api',require("./routes/api"))
+app.use('/api', require("./routes/api"));
 
-app.listen(3001,()=>{
-    console.log("server is running at 3001")
-})
+app.listen(PORT, () => {
+    console.log(`Server is running at ${PORT}`);
+});
+
