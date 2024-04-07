@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 
 module.exports = (sequelize, DataTypes) => {
-  return sequelize.define('employee_details', {
+  return sequelize.define('employee_details', { //added employee details
     emp_id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
